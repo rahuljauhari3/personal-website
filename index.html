@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rahul Manish Jauhari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="site-nav" aria-label="Primary">
+  <a href="#home">home</a>
+  <a href="#work">work</a>
+</nav>
+<div class="card">
+  <div id="home">
+    <div class="top">
+      <div class="intro">
+        <h1>Rahul Manish Jauhari</h1>
+        <p class="lede">
+          Hello, I am Rahul, currently pursuing MS in Computer Science at Northeastern University, Boston. I'm interested in <a href="https://cloud.google.com/discover/what-is-ai-inference" target="_blank" rel="noopener">AI inference</a>.
+        </p>
+      </div>
+      <div class="photo-slot">
+        <img src="photo.png" alt="Rahul Jauhari">
+      </div>
+    </div>
+
+    <section>
+      <h2>At the moment, I am:</h2>
+      <ul>
+        <li>seeking full-time opportunities where I can apply my skills.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Work Experience</h2>
+      <ul>
+        <li><strong>Software Development Engineer</strong> at <a href="https://www.amd.com/en.html" target="_blank" rel="noopener">AMD</a> <em>2 years</em> on <a href="https://www.amd.com/en/developer/zendnn.html" target="_blank" rel="noopener">ZenDNN</a> AI inference performance optimization for AMD EPYC CPUs.</li>
+      </ul>
+    </section>
+  </div>
+
+  <div id="work" hidden>
+    <section>
+      <h2>In my previous experience</h2>
+    <ul>
+      <li>designed and built a multi-instance <strong>vLLM</strong> benchmarking stack (<a href="https://bit.ly/4wMlBy8" target="_blank" rel="noopener">Skill</a>: N instances behind an nginx load balancer, a shared Hugging Face cache, offline-by-default instances).</li>
+      <li>built a repeatable <strong>vLLM + zentorch</strong> (ZenDNN backend) install path (<a href="https://github.com/amd/ZenDNN-pytorch-plugin/tree/af30c93e08a4570d21b96de781eca38cb81a9f50/.claude/skills/build-vllm-zentorch" target="_blank" rel="noopener">Skill</a>: pip CPU wheel or source with optional PR cherry-picks, version-gated against zentorch's supported range, local ZenDNN checkout, native or Docker, plus smoke and benchmark validation).</li>
+      <li>root-caused a vLLM 0.13.0 + zentorch regression that broke multi-instance memory behavior via a hardcoded env var.</li>
+      <li>ran competitive analysis against Intel Granite Rapids on Turin and Venice, filing gaps as tracked defects.</li>
+      <li>built and owned the <a href="http://bit.ly/465JyGQ" target="_blank" rel="noopener"><strong>TF-Java interface</strong></a> for ZenDNN's TensorFlow plugin from nothing to a shipping product — benchmarks, accuracy infra, a user guide, an open-sourced examples repo on Hugging Face, and a public blog post.</li>
+      <li>upstreamed <strong>PluggableDevice</strong> support into the TensorFlow-plugin project, so zentf can be consumed from stock TF rather than a fork.</li>
+      <li>run the version migration treadmill — TF-Java 0.4.0 → 1.1.0, TensorFlow 2.18 → 2.20 → 2.21 — each with build fixes, revalidation, and accuracy regression hunts.</li>
+      <li>shipped op and fusion work: FusedMatMul (MatMul + BiasAdd + Tanh), biasadd+fusion across Conv2D and MatMul, ZenSafeEmbeddingLookup fusion, and ZenDNN-accelerated GatherNd/GatherV2.</li>
+      <li>added Conv3D support via an im2col + MatMul rewrite, driven by reading the TransNetV2 paper to derive the requirement.</li>
+      <li>migrated the plugin off the legacy ZenDNN library onto ZenDNNL, including the direct MatMul API and FEMM integration.</li>
+      <li>built and iterated the team's performance dashboards — daily/weekly views, zentorch-vs-IPEX comparisons, a data-ops admin UI — and reviewed roughly 130 pull requests across the ZenAI repositories.</li>
+      <li>stood up ZenDNN ONNX Runtime (onnxrt) benchmarking across Linux and Windows early on, the source of most of the team's automated CI reporting.</li>
+      <li>supported external engagements with Red Hat/RHAII, Snapchat, Netflix, BharatGen, and Byblos Bank on CPU sizing and benchmarking.</li>
+    </ul>
+    </section>
+  </div>
+
+  <footer>
+    <a href="mailto:jauhari.ra@northeastern.edu">jauhari.ra@northeastern.edu</a>
+    <a href="https://github.com/rahuljauhari3" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.linkedin.com/in/rahuljauhari/" target="_blank" rel="noopener">LinkedIn</a>
+  </footer>
+</div>
+<script>
+  function showPage() {
+    const page = location.hash === '#work' ? 'work' : 'home';
+    document.getElementById('home').hidden = page !== 'home';
+    document.getElementById('work').hidden = page !== 'work';
+    document.querySelectorAll('.site-nav a').forEach(function (link) {
+      link.classList.toggle('is-active', link.getAttribute('href') === '#' + page);
+    });
+  }
+  window.addEventListener('hashchange', showPage);
+  showPage();
+</script>
+</body>
+</html>
