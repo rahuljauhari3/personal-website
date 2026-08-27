@@ -19,7 +19,7 @@
       <div class="intro">
         <h1>Rahul Manish Jauhari</h1>
         <p class="lede">
-          Hello, I am Rahul, currently pursuing MS in Computer Science at Northeastern University, Boston. I'm interested in <a href="https://cloud.google.com/discover/what-is-ai-inference" target="_blank" rel="noopener">AI inference</a>.
+          Hello, I am Rahul, currently pursuing MS in Computer Science at Northeastern University, Boston. I'm interested in <a href="https://cloud.google.com/discover/what-is-ai-inference" target="_blank" rel="noopener">AI inference</a>, exploring intersections of AI and hardware.
         </p>
       </div>
       <div class="photo-slot">
@@ -31,13 +31,14 @@
       <h2>At the moment, I am:</h2>
       <ul>
         <li>seeking full-time opportunities where I can apply my skills.</li>
+        <li>reading and swimming.</li>
       </ul>
     </section>
 
     <section>
       <h2>Work Experience</h2>
       <ul>
-        <li><strong>Software Development Engineer</strong> at <a href="https://www.amd.com/en.html" target="_blank" rel="noopener">AMD</a> <em>2 years</em> on <a href="https://www.amd.com/en/developer/zendnn.html" target="_blank" rel="noopener">ZenDNN</a> AI inference performance optimization for AMD EPYC CPUs.</li>
+        <li><strong>Software Development Engineer</strong> at <a href="https://www.amd.com/en.html" target="_blank" rel="noopener">AMD</a>: spent 2 years working on <a href="https://www.amd.com/en/developer/zendnn.html" target="_blank" rel="noopener">ZenDNN</a>, researching and developing hardware-aware optimizations for deep learning inference on AMD EPYC CPUs, spanning optimized kernels, graph execution, quantization, and large-scale AI workloads.</li>
       </ul>
     </section>
   </div>
@@ -48,8 +49,8 @@
     <ul>
       <li>designed and built a multi-instance <strong>vLLM</strong> benchmarking stack (<a href="https://bit.ly/4wMlBy8" target="_blank" rel="noopener">Skill</a>: N instances behind an nginx load balancer, a shared Hugging Face cache, offline-by-default instances).</li>
       <li>built a repeatable <strong>vLLM + zentorch</strong> (ZenDNN backend) install path (<a href="https://github.com/amd/ZenDNN-pytorch-plugin/tree/af30c93e08a4570d21b96de781eca38cb81a9f50/.claude/skills/build-vllm-zentorch" target="_blank" rel="noopener">Skill</a>: pip CPU wheel or source with optional PR cherry-picks, version-gated against zentorch's supported range, local ZenDNN checkout, native or Docker, plus smoke and benchmark validation).</li>
-      <li>root-caused a vLLM 0.13.0 + zentorch regression that broke multi-instance memory behavior via a hardcoded env var.</li>
-      <li>ran competitive analysis against Intel Granite Rapids on Turin and Venice, filing gaps as tracked defects.</li>
+      <li>root-caused a vLLM + zentorch regression that broke multi-instance memory behavior via a hardcoded env var.</li>
+      <li>ran competitive analysis against Intel Granite Rapids, Turin and Venice, filing gaps as tracked defects.</li>
       <li>built and owned the <a href="http://bit.ly/465JyGQ" target="_blank" rel="noopener"><strong>TF-Java interface</strong></a> for ZenDNN's TensorFlow plugin from nothing to a shipping product — benchmarks, accuracy infra, a user guide, an open-sourced examples repo on Hugging Face, and a public blog post.</li>
       <li>upstreamed <strong>PluggableDevice</strong> support into the TensorFlow-plugin project, so zentf can be consumed from stock TF rather than a fork.</li>
       <li>run the version migration treadmill — TF-Java 0.4.0 → 1.1.0, TensorFlow 2.18 → 2.20 → 2.21 — each with build fixes, revalidation, and accuracy regression hunts.</li>
