@@ -3,84 +3,187 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rahul Manish Jauhari</title>
+<meta name="description" content="Rahul Manish Jauhari is an MSCS student at Northeastern and former AMD software engineer focused on AI inference systems, performance engineering, and backend infrastructure.">
+<title>Rahul Manish Jauhari | AI Inference Systems</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <nav class="site-nav" aria-label="Primary">
-  <a href="#home">home</a>
+  <a href="#about">about</a>
   <a href="#work">work</a>
+  <a href="#depth">depth</a>
+  <a href="#contact">contact</a>
 </nav>
-<div class="card">
-  <div id="home">
-    <div class="top">
-      <div class="intro">
-        <h1>Rahul Manish Jauhari</h1>
-        <p class="lede">
-          Hello, I am Rahul, currently pursuing MS in Computer Science at Northeastern University, Boston. I'm interested in <a href="https://cloud.google.com/discover/what-is-ai-inference" target="_blank" rel="noopener">AI inference</a>, exploring intersections of AI and hardware.
-        </p>
-      </div>
-      <div class="photo-slot">
-        <img src="photo.png" alt="Rahul Jauhari">
+
+<main>
+  <section class="hero" id="about">
+    <div class="hero-copy">
+      <p class="kicker">MSCS @ Northeastern | Ex-AMD Software Engineer</p>
+      <h1>AI inference systems where models meet CPUs.</h1>
+      <p class="lede">
+        I am Rahul Manish Jauhari, a Computer Science graduate student at Northeastern University. I build and benchmark performance-sensitive AI systems across TensorFlow, PyTorch/vLLM, ONNX Runtime, Java integrations, and AMD EPYC CPUs.
+      </p>
+      <div class="availability">Seeking co-op and internship roles in AI/ML systems, backend infrastructure, and performance engineering.</div>
+      <div class="actions" aria-label="Primary links">
+        <a class="button primary" href="#work">Selected work</a>
+        <a class="button" href="mailto:jauhari.ra@northeastern.edu">Email me</a>
+        <a class="button" href="https://www.linkedin.com/in/rahuljauhari/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="button" href="https://github.com/rahuljauhari3" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
+    <aside class="portrait-card" aria-label="Rahul Jauhari profile">
+      <img src="photo.png" alt="Rahul Jauhari">
+      <div>
+        <strong>Current focus</strong>
+        <span>LLM serving, CPU inference, benchmark automation, and production-quality performance analysis.</span>
+      </div>
+    </aside>
+  </section>
 
-    <section>
-      <h2>At the moment, I am:</h2>
+  <section class="metrics" aria-label="Career highlights">
+    <div>
+      <strong>2 years</strong>
+      <span>Software engineer on AMD ZenDNN</span>
+    </div>
+    <div>
+      <strong>30%</strong>
+      <span>memory reduction through weight prepacking layout work</span>
+    </div>
+    <div>
+      <strong>20-30%</strong>
+      <span>efficiency gains from TensorFlow operator fusion work</span>
+    </div>
+    <div>
+      <strong>130+</strong>
+      <span>PRs reviewed across ZenAI repositories</span>
+    </div>
+  </section>
+
+  <section class="section-heading" id="work">
+    <p class="kicker">Selected work</p>
+    <h2>Proof that fits the roles I am targeting.</h2>
+    <p>Each card is intentionally short. Hiring managers can scan the shape of the work first, then open the technical details below if they want depth.</p>
+  </section>
+
+  <section class="work-grid" aria-label="Selected AMD work">
+    <article class="work-card featured">
+      <div class="card-topline">
+        <span>TensorFlow / Java</span>
+        <span>Shipping product</span>
+      </div>
+      <h3>Built the TF-Java interface for ZenDNN</h3>
+      <p>Owned the Java interface for ZenDNN's TensorFlow plugin from nothing to a shipping product, including benchmark infra, accuracy validation, examples, docs, and a public blog post.</p>
       <ul>
-        <li>seeking full-time opportunities where I can apply my skills.</li>
-        <li>reading and swimming.</li>
+        <li>Built validation for BERT, RecSys, and CNN workloads.</li>
+        <li>Upstreamed PluggableDevice support into TensorFlow-Java.</li>
+        <li>Migrated TF-Java 0.4.0 to 1.1.0 and TensorFlow 2.18 to 2.21.</li>
       </ul>
-    </section>
+      <a href="https://bit.ly/465JyGQ" target="_blank" rel="noopener">Read public writeup</a>
+    </article>
 
-    <section>
-      <h2>Work Experience</h2>
+    <article class="work-card">
+      <div class="card-topline">
+        <span>LLM serving</span>
+        <span>vLLM on EPYC</span>
+      </div>
+      <h3>Made CPU LLM benchmarking reproducible</h3>
+      <p>Designed a multi-instance vLLM benchmarking stack for AMD EPYC CPUs with nginx load balancing, a shared Hugging Face cache, offline-by-default instances, and rootless-safe execution.</p>
       <ul>
-        <li><strong>Software Development Engineer</strong> at <a href="https://www.amd.com/en.html" target="_blank" rel="noopener">AMD</a>: spent 2 years working on <a href="https://www.amd.com/en/developer/zendnn.html" target="_blank" rel="noopener">ZenDNN</a>, researching and developing hardware-aware optimizations for deep learning inference on AMD EPYC CPUs, spanning optimized kernels, graph execution, quantization, and large-scale AI workloads.</li>
+        <li>Extended sweep harnesses for dtype, backends, and environment injection.</li>
+        <li>Root-caused multi-instance memory blow-ups tied to NUMA and thread binding.</li>
+        <li>Supported Red Hat/RHAII performance methodology and release-candidate testing.</li>
       </ul>
-    </section>
-  </div>
+      <a href="https://bit.ly/4wMlBy8" target="_blank" rel="noopener">View benchmark skill</a>
+    </article>
 
-  <div id="work" hidden>
-    <section>
-      <h2>In my previous experience</h2>
-    <ul>
-      <li>designed and built a multi-instance <strong>vLLM</strong> benchmarking stack (<a href="https://bit.ly/4wMlBy8" target="_blank" rel="noopener">Skill</a>: N instances behind an nginx load balancer, a shared Hugging Face cache, offline-by-default instances).</li>
-      <li>built a repeatable <strong>vLLM + zentorch</strong> (ZenDNN backend) install path (<a href="https://github.com/amd/ZenDNN-pytorch-plugin/tree/af30c93e08a4570d21b96de781eca38cb81a9f50/.claude/skills/build-vllm-zentorch" target="_blank" rel="noopener">Skill</a>: pip CPU wheel or source with optional PR cherry-picks, version-gated against zentorch's supported range, local ZenDNN checkout, native or Docker, plus smoke and benchmark validation).</li>
-      <li>root-caused a vLLM + zentorch regression that broke multi-instance memory behavior via a hardcoded env var.</li>
-      <li>ran competitive analysis against Intel Granite Rapids, Turin and Venice, filing gaps as tracked defects.</li>
-      <li>built and owned the <a href="http://bit.ly/465JyGQ" target="_blank" rel="noopener"><strong>TF-Java interface</strong></a> for ZenDNN's TensorFlow plugin from nothing to a shipping product — benchmarks, accuracy infra, a user guide, an open-sourced examples repo on Hugging Face, and a public blog post.</li>
-      <li>upstreamed <strong>PluggableDevice</strong> support into the TensorFlow-plugin project, so zentf can be consumed from stock TF rather than a fork.</li>
-      <li>run the version migration treadmill — TF-Java 0.4.0 → 1.1.0, TensorFlow 2.18 → 2.20 → 2.21 — each with build fixes, revalidation, and accuracy regression hunts.</li>
-      <li>shipped op and fusion work: FusedMatMul (MatMul + BiasAdd + Tanh), biasadd+fusion across Conv2D and MatMul, ZenSafeEmbeddingLookup fusion, and ZenDNN-accelerated GatherNd/GatherV2.</li>
-      <li>added Conv3D support via an im2col + MatMul rewrite, driven by reading the TransNetV2 paper to derive the requirement.</li>
-      <li>migrated the plugin off the legacy ZenDNN library onto ZenDNNL, including the direct MatMul API and FEMM integration.</li>
-      <li>built and iterated the team's performance dashboards — daily/weekly views, zentorch-vs-IPEX comparisons, a data-ops admin UI — and reviewed roughly 130 pull requests across the ZenAI repositories.</li>
-      <li>stood up ZenDNN ONNX Runtime (onnxrt) benchmarking across Linux and Windows early on, the source of most of the team's automated CI reporting.</li>
-      <li>supported external engagements with Red Hat/RHAII, Snapchat, Netflix, BharatGen, and Byblos Bank on CPU sizing and benchmarking.</li>
-    </ul>
-    </section>
-  </div>
+    <article class="work-card">
+      <div class="card-topline">
+        <span>Performance</span>
+        <span>Kernels and graphs</span>
+      </div>
+      <h3>Moved bottlenecks into optimized execution paths</h3>
+      <p>Worked across framework plugins and core library paths to improve inference efficiency for RecSys, CNN, and LLM workloads on CPU.</p>
+      <ul>
+        <li>Improved RecSys throughput by 20% through TensorFlow operator fusion.</li>
+        <li>Engineered a 30% latency/efficiency gain by fusing MatMul, BiasAdd, and TanH.</li>
+        <li>Designed runtime MatMul dispatch logic for AVX2, AVX-512, and AMX shapes.</li>
+      </ul>
+    </article>
+  </section>
 
-  <footer>
-    <a href="mailto:jauhari.ra@northeastern.edu">jauhari.ra@northeastern.edu</a>
-    <a href="https://github.com/rahuljauhari3" target="_blank" rel="noopener">GitHub</a>
-    <a href="https://www.linkedin.com/in/rahuljauhari/" target="_blank" rel="noopener">LinkedIn</a>
-  </footer>
-</div>
-<script>
-  function showPage() {
-    const page = location.hash === '#work' ? 'work' : 'home';
-    document.getElementById('home').hidden = page !== 'home';
-    document.getElementById('work').hidden = page !== 'work';
-    document.querySelectorAll('.site-nav a').forEach(function (link) {
-      link.classList.toggle('is-active', link.getAttribute('href') === '#' + page);
-    });
-  }
-  window.addEventListener('hashchange', showPage);
-  showPage();
-</script>
+  <section class="system-sketch" aria-label="AI inference work map">
+    <div>
+      <p class="kicker">How the work connects</p>
+      <h2>From model workload to measured CPU performance.</h2>
+      <p>The through-line in my AMD work was making inference faster, more measurable, and easier to consume from real framework interfaces.</p>
+    </div>
+    <div class="flow" aria-label="Inference workflow diagram">
+      <span>Models</span>
+      <span>Framework plugins</span>
+      <span>ZenDNN / ZenDNNL</span>
+      <span>EPYC CPUs</span>
+      <span>Benchmarks and dashboards</span>
+    </div>
+  </section>
+
+  <section class="section-heading" id="depth">
+    <p class="kicker">Technical depth</p>
+    <h2>Open the parts you care about.</h2>
+  </section>
+
+  <section class="details-grid" aria-label="Technical details">
+    <details open>
+      <summary>Framework and release engineering</summary>
+      <p>Handled release train work across ZenDNN's TensorFlow plugin, TF-Java packaging, manylinux wheel builds, version display, structured logging, and build migrations from legacy ZenDNN library paths to ZenDNNL.</p>
+    </details>
+    <details>
+      <summary>Ops and fusions shipped</summary>
+      <p>Worked on FusedMatMul, BiasAdd + Add fusions across Conv2D and MatMul, ZenSafeEmbeddingLookupSparse, GroupSafeEmbeddingLookupSparse horizontal fusion, ZenDNN-accelerated GatherNd/GatherV2, and Conv3D via im2col + MatMul.</p>
+    </details>
+    <details>
+      <summary>Benchmark automation and dashboards</summary>
+      <p>Built model runners across Python, C++, and Java interfaces; maintained zentorch-vs-IPEX dashboards; supported ONNX Runtime benchmarking across Linux and Windows; and helped the team turn noisy performance runs into actionable regression signals.</p>
+    </details>
+    <details>
+      <summary>Customer-facing performance work</summary>
+      <p>Supported Red Hat/RHAII, Snapchat, Netflix, BharatGen, and Byblos Bank engagements with benchmarking, CPU sizing, model enablement, regression isolation, and sensitive customer use-case handling.</p>
+    </details>
+  </section>
+
+  <section class="experience-strip" aria-label="Additional experience">
+    <div>
+      <p class="kicker">Before that</p>
+      <h2>Earlier engineering experience</h2>
+    </div>
+    <div class="timeline">
+      <article>
+        <h3>Co-op Intern, AMD</h3>
+        <p>Improved CNN model performance by up to 25% through quantized kernel development and automated nightly AI framework benchmarking with Jenkins.</p>
+      </article>
+      <article>
+        <h3>Backend Developer Intern, Sypto</h3>
+        <p>Reduced cryptocurrency selection time by 4x and improved dashboard response time by 50% through parallel computation, caching, and query optimization.</p>
+      </article>
+      <article>
+        <h3>RPA Intern, Silver Touch</h3>
+        <p>Automated invoice processing with OCR and machine learning, reaching a 95% automation rate for structured data extraction.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <p class="kicker">Contact</p>
+    <h2>Open to co-op conversations.</h2>
+    <p>I am especially interested in teams working on AI infrastructure, inference optimization, backend platforms, performance tooling, or systems for applied ML.</p>
+    <div class="actions">
+      <a class="button primary" href="mailto:jauhari.ra@northeastern.edu">jauhari.ra@northeastern.edu</a>
+      <a class="button" href="https://www.linkedin.com/in/rahuljauhari/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="button" href="https://github.com/rahuljauhari3" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </section>
+</main>
 </body>
 </html>
