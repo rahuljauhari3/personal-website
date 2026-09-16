@@ -68,11 +68,11 @@
     <div class="flagship-copy">
       <p class="kicker">Flagship project</p>
       <h2>vLLM multi-instance benchmarking infrastructure</h2>
-      <p>Built a repeatable way to test how many user requests a CPU system could serve by running multiple isolated vLLM containers in parallel, each pinned to its own CPU core range and loading its own model instance.</p>
+      <p>Built a repeatable multi-instance setup to serve more user requests, compare configurations, and expose regressions across isolated vLLM containers.</p>
       <dl class="case-points">
-        <div><dt>Problem</dt><dd>One model server did not show whether a CPU machine could serve more users by splitting traffic across multiple isolated instances.</dd></div>
-        <div><dt>Build</dt><dd>Podman containers for each vLLM instance, explicit CPU core ranges per container, per-instance model loading, nginx load balancing, shared model cache, and offline-by-default execution.</dd></div>
-        <div><dt>Impact</dt><dd>Made request routing and capacity testing reproducible, while making memory, scaling, and CPU-affinity issues easier to isolate.</dd></div>
+        <div><dt>Problem</dt><dd>A single LLM server could not show how many user requests the CPU system could handle under parallel serving.</dd></div>
+        <div><dt>Build</dt><dd>Built containerized vLLM instances with Podman, pinned each instance to a CPU core range, and routed user requests through a load balancer.</dd></div>
+        <div><dt>Impact</dt><dd>Showed how request capacity changed across isolated instances and helped root-cause memory, scaling, and CPU-binding issues.</dd></div>
       </dl>
       <div class="actions compact-actions">
         <a class="button primary" href="https://github.com/amd/ZenDNN-pytorch-plugin/tree/main/.claude/skills/build-vllm-zentorch" target="_blank" rel="noopener">View GitHub tool</a>
@@ -108,21 +108,6 @@
   </section>
 
   <section class="work-grid" aria-label="Selected AMD work in STAR format">
-    <article class="work-card featured alt">
-      <div class="card-topline">
-        <span>AI infrastructure</span>
-        <span>Public tooling</span>
-      </div>
-      <h3>vLLM multi-instance benchmark infrastructure</h3>
-      <dl class="star-list">
-        <div><dt>Situation</dt><dd>A single LLM server could not show how many user requests the CPU system could handle under parallel serving.</dd></div>
-        <div><dt>Task</dt><dd>Create a repeatable multi-instance setup to serve more requests, compare configurations, and expose regressions.</dd></div>
-        <div><dt>Action</dt><dd>Built containerized vLLM instances with Podman, pinned each instance to a CPU core range, and routed user requests through a load balancer.</dd></div>
-        <div><dt>Result</dt><dd>Showed how request capacity changed across isolated instances and helped root-cause memory, scaling, and CPU-binding issues.</dd></div>
-      </dl>
-      <a href="#flagship">See how it works</a>
-    </article>
-
     <article class="work-card featured alt">
       <div class="card-topline">
         <span>Real-time dashboard</span>
