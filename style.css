@@ -473,8 +473,17 @@ h3 {
 
 .instance-row .anim-node {
   position: static;
-  min-height: 56px;
+  min-height: 72px;
+  flex-direction: column;
+  gap: 4px;
   animation: node-pulse 3.6s ease-in-out infinite;
+}
+
+.instance-row .anim-node span {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .instance-row .anim-node:nth-child(2) {
@@ -548,27 +557,44 @@ h3 {
   background: var(--rust);
   border-radius: 50%;
   box-shadow: 0 0 0 6px rgba(154, 79, 46, 0.12);
-  animation: packet-flow 3.6s linear infinite;
+  animation-duration: 3.6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
-.packet-a {
-  animation-delay: 0s;
-}
+.packet-a { animation-name: packet-left; animation-delay: 0s; }
+.packet-b { animation-name: packet-center; animation-delay: 0.55s; }
+.packet-c { animation-name: packet-right; animation-delay: 1.1s; }
+.packet-d { animation-name: packet-left; animation-delay: 1.65s; }
+.packet-e { animation-name: packet-center; animation-delay: 2.2s; }
+.packet-f { animation-name: packet-right; animation-delay: 2.75s; }
 
-.packet-b {
-  animation-delay: 1.2s;
-}
-
-.packet-c {
-  animation-delay: 2.4s;
-}
-
-@keyframes packet-flow {
+@keyframes packet-left {
   0% { top: 43px; left: 50%; opacity: 0; }
   8% { opacity: 1; }
   28% { top: 125px; left: 50%; }
-  48% { top: 232px; left: 24%; }
-  68% { top: 326px; left: 50%; }
+  50% { top: 238px; left: 18%; }
+  70% { top: 332px; left: 50%; }
+  88% { top: 383px; left: 50%; opacity: 1; }
+  100% { top: 383px; left: 50%; opacity: 0; }
+}
+
+@keyframes packet-center {
+  0% { top: 43px; left: 50%; opacity: 0; }
+  8% { opacity: 1; }
+  28% { top: 125px; left: 50%; }
+  50% { top: 238px; left: 50%; }
+  70% { top: 332px; left: 50%; }
+  88% { top: 383px; left: 50%; opacity: 1; }
+  100% { top: 383px; left: 50%; opacity: 0; }
+}
+
+@keyframes packet-right {
+  0% { top: 43px; left: 50%; opacity: 0; }
+  8% { opacity: 1; }
+  28% { top: 125px; left: 50%; }
+  50% { top: 238px; left: 82%; }
+  70% { top: 332px; left: 50%; }
   88% { top: 383px; left: 50%; opacity: 1; }
   100% { top: 383px; left: 50%; opacity: 0; }
 }
@@ -750,6 +776,14 @@ details p {
   .anim-node {
     font-size: 0.72rem;
     padding: 7px 8px;
+  }
+
+  .instance-row .anim-node {
+    min-height: 78px;
+  }
+
+  .instance-row .anim-node span {
+    font-size: 0.61rem;
   }
 
   .request,
