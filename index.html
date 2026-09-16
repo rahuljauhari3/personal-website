@@ -14,7 +14,7 @@
 <nav class="site-nav" aria-label="Primary">
   <a href="#about">about</a>
   <a href="#work">work</a>
-  <a href="#approach">approach</a>
+  <a href="#flagship">vLLM</a>
   <a href="#contact">contact</a>
 </nav>
 
@@ -31,6 +31,7 @@
       <div class="actions" aria-label="Primary links">
         <a class="button primary" href="#work">Selected work</a>
         <a class="button" href="mailto:jauhari.ra@northeastern.edu">Email me</a>
+        <a class="button" href="mailto:jauhari.ra@northeastern.edu?subject=Resume%20request">Resume</a>
         <a class="button" href="https://www.linkedin.com/in/rahuljauhari/" target="_blank" rel="noopener">LinkedIn</a>
         <a class="button" href="https://github.com/rahuljauhari3" target="_blank" rel="noopener">GitHub</a>
       </div>
@@ -65,29 +66,44 @@
 
   <section class="section-heading" id="work">
     <p class="kicker">Selected work</p>
-    <h2>Four projects, each readable in 10 seconds.</h2>
-    <p>Each card follows STAR: situation, task, action, and result. The goal is quick understanding first, technical depth second.</p>
+    <h2>Proof, not jargon.</h2>
+    <p>Projects from AMD and prior internships, written for quick scanning with public links where the work can be shared.</p>
   </section>
 
   <section class="work-grid" aria-label="Selected AMD work in STAR format">
     <article class="work-card featured alt">
       <div class="card-topline">
+        <span>AI infrastructure</span>
+        <span>Public tooling</span>
+      </div>
+      <h3>vLLM multi-instance benchmark infrastructure</h3>
+      <dl class="star-list">
+        <div><dt>Situation</dt><dd>Teams needed reliable answers about how LLM serving behaved when many CPU instances ran together.</dd></div>
+        <div><dt>Task</dt><dd>Create a repeatable setup that could compare runs and expose performance regressions.</dd></div>
+        <div><dt>Action</dt><dd>Built a multi-instance benchmark stack with load balancing, shared model storage, and offline-by-default runs.</dd></div>
+        <div><dt>Result</dt><dd>Made performance testing easier to reproduce and helped root-cause memory and scaling issues.</dd></div>
+      </dl>
+      <a href="#flagship">See how it works</a>
+    </article>
+
+    <article class="work-card featured">
+      <div class="card-topline">
         <span>AI knowledge search</span>
-        <span>RAG chatbot</span>
+        <span>Proprietary</span>
       </div>
       <h3>Engineering knowledge chatbot</h3>
       <dl class="star-list">
         <div><dt>Situation</dt><dd>Engineers had to search old tickets, comments, and docs to understand past work.</dd></div>
         <div><dt>Task</dt><dd>Make team knowledge searchable through a chatbot without losing source context.</dd></div>
-        <div><dt>Action</dt><dd>Built a Retrieval-Augmented Generation (RAG) app that connected past engineering records and docs to an AI assistant with source context.</dd></div>
-        <div><dt>Result</dt><dd>Reduced manual lookup effort and helped prevent duplicate bug reports.</dd></div>
+        <div><dt>Action</dt><dd>Built a Retrieval-Augmented Generation (RAG) app that connected past engineering records and docs to an AI assistant.</dd></div>
+        <div><dt>Result</dt><dd>Reduced manual lookup effort and helped prevent duplicate bug reports. Code cannot be shared publicly.</dd></div>
       </dl>
     </article>
 
-    <article class="work-card featured">
+    <article class="work-card">
       <div class="card-topline">
         <span>Product engineering</span>
-        <span>Developer adoption</span>
+        <span>Public writeup</span>
       </div>
       <h3>Java interface for AMD AI acceleration</h3>
       <dl class="star-list">
@@ -101,71 +117,52 @@
 
     <article class="work-card">
       <div class="card-topline">
-        <span>AI model testing</span>
-        <span>Benchmarking</span>
-      </div>
-      <h3>Repeatable LLM performance testing</h3>
-      <dl class="star-list">
-        <div><dt>Situation</dt><dd>Teams needed reliable answers about how well large language models ran on CPUs.</dd></div>
-        <div><dt>Task</dt><dd>Create a repeatable test setup that could compare runs and expose regressions.</dd></div>
-        <div><dt>Action</dt><dd>Built a repeatable testing setup that could run multiple model-serving experiments under the same conditions.</dd></div>
-        <div><dt>Result</dt><dd>Made performance testing easier to reproduce and helped root-cause memory and scaling issues.</dd></div>
-      </dl>
-      <a href="https://bit.ly/4wMlBy8" target="_blank" rel="noopener">View benchmark tooling</a>
-    </article>
-
-    <article class="work-card">
-      <div class="card-topline">
         <span>Performance</span>
-        <span>Optimization</span>
+        <span>Proprietary</span>
       </div>
       <h3>Faster AI models on CPUs</h3>
       <dl class="star-list">
         <div><dt>Situation</dt><dd>Some AI models were spending too much time and memory on repeated computation.</dd></div>
         <div><dt>Task</dt><dd>Find bottlenecks and make the models run more efficiently on CPU hardware.</dd></div>
         <div><dt>Action</dt><dd>Combined repeated model steps, improved memory layout, and tested changes against real workloads.</dd></div>
-        <div><dt>Result</dt><dd>Delivered measured gains, including 20-30% improvements in key workloads.</dd></div>
+        <div><dt>Result</dt><dd>Delivered measured gains, including 20-30% improvements. Implementation code cannot be shared publicly.</dd></div>
       </dl>
     </article>
   </section>
 
-  <section class="system-sketch" id="approach" aria-label="Rahul's working style">
-    <div>
-      <p class="kicker">How I work</p>
-      <h2>I turn unclear technical problems into measurable systems.</h2>
-      <p>Most of my work followed the same pattern: understand the pain, build a focused tool or fix, measure it, then make it easier for the next engineer to use.</p>
+  <section class="flagship" id="flagship" aria-label="vLLM multi-instance benchmark infrastructure case study">
+    <div class="flagship-copy">
+      <p class="kicker">Flagship project</p>
+      <h2>vLLM multi-instance benchmarking infrastructure</h2>
+      <p>Built a repeatable way to test LLM serving when multiple CPU inference instances run at once, so teams could compare configurations and investigate regressions with evidence.</p>
+      <dl class="case-points">
+        <div><dt>Problem</dt><dd>Single-run benchmarks did not explain how LLM serving behaved under concurrent CPU instances.</dd></div>
+        <div><dt>Build</dt><dd>N instances behind an nginx load balancer, shared model cache, offline-by-default execution, and rootless-safe startup.</dd></div>
+        <div><dt>Impact</dt><dd>Helped make performance runs reproducible and exposed memory, scaling, and regression issues faster.</dd></div>
+      </dl>
+      <div class="actions compact-actions">
+        <a class="button primary" href="https://github.com/amd/ZenDNN-pytorch-plugin/tree/main/.claude/skills/build-vllm-zentorch" target="_blank" rel="noopener">View GitHub tool</a>
+        <a class="button" href="https://bit.ly/4wMlBy8" target="_blank" rel="noopener">Benchmark skill</a>
+      </div>
     </div>
-    <div class="flow" aria-label="Working style diagram">
-      <span>Find the repeated pain</span>
-      <span>Build the smallest useful system</span>
-      <span>Measure the change</span>
-      <span>Document the path</span>
-      <span>Help the team adopt it</span>
+    <div class="benchmark-animation" aria-label="Animated diagram of the vLLM benchmark flow">
+      <div class="anim-node request">Benchmark request</div>
+      <div class="anim-line line-down"></div>
+      <div class="anim-node balancer">nginx load balancer</div>
+      <div class="fan fan-left"></div>
+      <div class="fan fan-center"></div>
+      <div class="fan fan-right"></div>
+      <div class="instance-row">
+        <div class="anim-node instance">vLLM #1</div>
+        <div class="anim-node instance">vLLM #2</div>
+        <div class="anim-node instance">vLLM #3</div>
+      </div>
+      <div class="anim-node cache">Shared model cache</div>
+      <div class="anim-node results">Benchmark results + regression signal</div>
+      <span class="packet packet-a"></span>
+      <span class="packet packet-b"></span>
+      <span class="packet packet-c"></span>
     </div>
-  </section>
-
-  <section class="section-heading" id="depth">
-    <p class="kicker">More context</p>
-    <h2>For readers who want one layer deeper.</h2>
-  </section>
-
-  <section class="details-grid" aria-label="Plain-English work details">
-    <details open>
-      <summary>RAG and LLM evaluation</summary>
-      <p>Built a retrieval chatbot for engineering knowledge and created an evaluation process to compare model answers against stronger reference answers, with human review to avoid relying only on automated scoring.</p>
-    </details>
-    <details>
-      <summary>Developer-facing product work</summary>
-      <p>Created examples, guides, validation tests, and interfaces so other engineers could use performance work without needing to understand every low-level implementation detail.</p>
-    </details>
-    <details>
-      <summary>Performance and reliability work</summary>
-      <p>Improved AI workload speed and memory use by finding repeated operations, combining steps, improving data layout, and validating the changes with real benchmarks.</p>
-    </details>
-    <details>
-      <summary>Team-scale engineering</summary>
-      <p>Reviewed 130+ pull requests, built dashboards and automation, and supported partner-facing performance investigations with careful measurement and documentation.</p>
-    </details>
   </section>
 
   <section class="experience-strip" aria-label="Additional experience">
@@ -175,15 +172,15 @@
     </div>
     <div class="timeline">
       <article>
-        <h3>Co-op Intern, AMD</h3>
+        <h3>Co-op Intern, AMD · Jan 2024 - Jun 2024</h3>
         <p>Improved AI model performance by up to 25% and helped automate nightly performance testing.</p>
       </article>
       <article>
-        <h3>Backend Developer Intern, Sypto</h3>
+        <h3>Backend Developer Intern, Sypto · Mar 2023 - Jul 2023</h3>
         <p>Reduced cryptocurrency selection time by 4x and improved dashboard response time by 50%.</p>
       </article>
       <article>
-        <h3>RPA Intern, Silver Touch</h3>
+        <h3>RPA Intern, Silver Touch · Jun 2022 - Jul 2022</h3>
         <p>Automated invoice processing with OCR and machine learning, reaching a 95% automation rate.</p>
       </article>
     </div>
@@ -195,6 +192,7 @@
     <p>I am especially interested in teams building AI knowledge products, AI infrastructure, backend platforms, performance tooling, or systems for applied ML.</p>
     <div class="actions">
       <a class="button primary" href="mailto:jauhari.ra@northeastern.edu">jauhari.ra@northeastern.edu</a>
+      <a class="button" href="mailto:jauhari.ra@northeastern.edu?subject=Resume%20request">Resume</a>
       <a class="button" href="https://www.linkedin.com/in/rahuljauhari/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="button" href="https://github.com/rahuljauhari3" target="_blank" rel="noopener">GitHub</a>
     </div>
