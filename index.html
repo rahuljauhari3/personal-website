@@ -13,8 +13,8 @@
 <body>
 <nav class="site-nav" aria-label="Primary">
   <a href="#about">about</a>
-  <a href="#work">work</a>
   <a href="#flagship">vLLM</a>
+  <a href="#work">work</a>
   <a href="#contact">contact</a>
 </nav>
 
@@ -29,7 +29,7 @@
       </p>
       <div class="availability">Seeking co-op and internship roles in AI systems, backend infrastructure, AI knowledge search, and performance engineering.</div>
       <div class="actions" aria-label="Primary links">
-        <a class="button primary" href="#work">Selected work</a>
+        <a class="button primary" href="#flagship">Flagship project</a>
         <a class="button" href="mailto:jauhari.ra@northeastern.edu">Email me</a>
         <a class="button" href="mailto:jauhari.ra@northeastern.edu?subject=Resume%20request">Resume</a>
         <a class="button" href="https://www.linkedin.com/in/rahuljauhari/" target="_blank" rel="noopener">LinkedIn</a>
@@ -64,26 +64,62 @@
     </div>
   </section>
 
+  <section class="flagship" id="flagship" aria-label="vLLM multi-instance benchmark infrastructure case study">
+    <div class="flagship-copy">
+      <p class="kicker">Flagship project</p>
+      <h2>vLLM multi-instance benchmarking infrastructure</h2>
+      <p>Built a repeatable way to test how many user requests a CPU system could serve by running multiple isolated vLLM containers in parallel, each pinned to its own CPU core range and loading its own model instance.</p>
+      <dl class="case-points">
+        <div><dt>Problem</dt><dd>One model server did not show whether a CPU machine could serve more users by splitting traffic across multiple isolated instances.</dd></div>
+        <div><dt>Build</dt><dd>Podman containers for each vLLM instance, explicit CPU core ranges per container, per-instance model loading, nginx load balancing, shared model cache, and offline-by-default execution.</dd></div>
+        <div><dt>Impact</dt><dd>Made request routing and capacity testing reproducible, while making memory, scaling, and CPU-affinity issues easier to isolate.</dd></div>
+      </dl>
+      <div class="actions compact-actions">
+        <a class="button primary" href="https://github.com/amd/ZenDNN-pytorch-plugin/tree/main/.claude/skills/build-vllm-zentorch" target="_blank" rel="noopener">View GitHub tool</a>
+      </div>
+    </div>
+    <div class="benchmark-animation" aria-label="Animated diagram of the vLLM benchmark flow">
+      <div class="anim-node request">User requests</div>
+      <div class="anim-line line-down"></div>
+      <div class="anim-node balancer">nginx load balancer</div>
+      <div class="fan fan-left"></div>
+      <div class="fan fan-center"></div>
+      <div class="fan fan-right"></div>
+      <div class="instance-row">
+        <div class="anim-node instance">Podman vLLM #1<span>isolated container<br>model loaded</span></div>
+        <div class="anim-node instance">Podman vLLM #2<span>isolated container<br>model loaded</span></div>
+        <div class="anim-node instance">Podman vLLM #3<span>isolated container<br>model loaded</span></div>
+      </div>
+      <div class="anim-node cache">Benchmark matrix: latency + throughput scores</div>
+      <div class="anim-node results">Request capacity and regression signal</div>
+      <span class="packet packet-a"></span>
+      <span class="packet packet-b"></span>
+      <span class="packet packet-c"></span>
+      <span class="packet packet-d"></span>
+      <span class="packet packet-e"></span>
+      <span class="packet packet-f"></span>
+    </div>
+  </section>
+
   <section class="section-heading" id="work">
     <p class="kicker">Selected work</p>
-    <h2>Proof, not jargon.</h2>
-    <p>Projects from AMD and prior internships, written for quick scanning with public links where the work can be shared.</p>
+    <h2>Other high-impact projects.</h2>
+    <p>Additional AMD and internship projects, written for quick scanning with public links where the work can be shared.</p>
   </section>
 
   <section class="work-grid" aria-label="Selected AMD work in STAR format">
     <article class="work-card featured alt">
       <div class="card-topline">
-        <span>AI infrastructure</span>
-        <span>Public tooling</span>
+        <span>Real-time dashboard</span>
+        <span>High priority</span>
       </div>
-      <h3>vLLM multi-instance benchmark infrastructure</h3>
+      <h3>Performance dashboard for AI workloads</h3>
       <dl class="star-list">
-        <div><dt>Situation</dt><dd>A single LLM server could not show how many user requests the CPU system could handle under parallel serving.</dd></div>
-        <div><dt>Task</dt><dd>Create a repeatable multi-instance setup to serve more requests, compare configurations, and expose regressions.</dd></div>
-        <div><dt>Action</dt><dd>Built containerized vLLM instances with Podman, pinned each instance to a CPU core range, and routed user requests through a load balancer.</dd></div>
-        <div><dt>Result</dt><dd>Showed how request capacity changed across isolated instances and helped root-cause memory, scaling, and CPU-binding issues.</dd></div>
+        <div><dt>Situation</dt><dd>Teams had to wait for long automated runs to finish before seeing which AI models passed, failed, or regressed.</dd></div>
+        <div><dt>Task</dt><dd>Give engineers and managers real-time visibility into model performance across daily and weekly runs.</dd></div>
+        <div><dt>Action</dt><dd>Built a Flask dashboard with live model-by-model updates, admin controls, filters, platform toggles, and automatic Jira plus email alerts for failures.</dd></div>
+        <div><dt>Result</dt><dd>Eliminated dashboard lag, improved issue visibility, and kept the dashboard responsive by sharding data and running multiple server instances.</dd></div>
       </dl>
-      <a href="#flagship">See how it works</a>
     </article>
 
     <article class="work-card featured">
@@ -128,43 +164,6 @@
         <div><dt>Result</dt><dd>Delivered measured gains, including 20-30% improvements. Implementation code cannot be shared publicly.</dd></div>
       </dl>
     </article>
-  </section>
-
-  <section class="flagship" id="flagship" aria-label="vLLM multi-instance benchmark infrastructure case study">
-    <div class="flagship-copy">
-      <p class="kicker">Flagship project</p>
-      <h2>vLLM multi-instance benchmarking infrastructure</h2>
-      <p>Built a repeatable way to test how many user requests a CPU system could serve by running multiple isolated vLLM containers in parallel, each pinned to its own CPU core range and loading its own model instance.</p>
-      <dl class="case-points">
-        <div><dt>Problem</dt><dd>One model server did not show whether a CPU machine could serve more users by splitting traffic across multiple isolated instances.</dd></div>
-        <div><dt>Build</dt><dd>Podman containers for each vLLM instance, explicit CPU core ranges per container, per-instance model loading, nginx load balancing, shared model cache, and offline-by-default execution.</dd></div>
-        <div><dt>Impact</dt><dd>Made request routing and capacity testing reproducible, while making memory, scaling, and CPU-affinity issues easier to isolate.</dd></div>
-      </dl>
-      <div class="actions compact-actions">
-        <a class="button primary" href="https://github.com/amd/ZenDNN-pytorch-plugin/tree/main/.claude/skills/build-vllm-zentorch" target="_blank" rel="noopener">View GitHub tool</a>
-      </div>
-    </div>
-    <div class="benchmark-animation" aria-label="Animated diagram of the vLLM benchmark flow">
-      <div class="anim-node request">User requests</div>
-      <div class="anim-line line-down"></div>
-      <div class="anim-node balancer">nginx load balancer</div>
-      <div class="fan fan-left"></div>
-      <div class="fan fan-center"></div>
-      <div class="fan fan-right"></div>
-      <div class="instance-row">
-        <div class="anim-node instance">Podman vLLM #1<span>isolated container<br>model loaded</span></div>
-        <div class="anim-node instance">Podman vLLM #2<span>isolated container<br>model loaded</span></div>
-        <div class="anim-node instance">Podman vLLM #3<span>isolated container<br>model loaded</span></div>
-      </div>
-      <div class="anim-node cache">Benchmark matrix: latency + throughput scores</div>
-      <div class="anim-node results">Request capacity and regression signal</div>
-      <span class="packet packet-a"></span>
-      <span class="packet packet-b"></span>
-      <span class="packet packet-c"></span>
-      <span class="packet packet-d"></span>
-      <span class="packet packet-e"></span>
-      <span class="packet packet-f"></span>
-    </div>
   </section>
 
   <section class="experience-strip" aria-label="Additional experience">
