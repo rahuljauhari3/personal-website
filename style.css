@@ -262,7 +262,7 @@ h3 {
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1px;
   overflow: hidden;
   border-radius: 8px;
@@ -279,6 +279,10 @@ h3 {
 
 .work-card.featured {
   background: #eef4f1;
+}
+
+.work-card.alt {
+  background: #f4efe8;
 }
 
 .card-topline {
@@ -314,6 +318,34 @@ h3 {
 .work-card li {
   margin-bottom: 8px;
   font-size: 0.92rem;
+}
+
+.star-list {
+  display: grid;
+  gap: 10px;
+  margin: 0 0 18px;
+}
+
+.star-list div {
+  display: grid;
+  grid-template-columns: 82px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+}
+
+.star-list dt {
+  color: var(--green);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.star-list dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 .work-card a {
@@ -465,6 +497,11 @@ details p {
 
   .work-card {
     padding: 22px;
+  }
+
+  .star-list div {
+    grid-template-columns: 1fr;
+    gap: 2px;
   }
 
   .section-heading {

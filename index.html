@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Rahul Manish Jauhari is an MSCS student at Northeastern and former AMD software engineer focused on AI inference systems, performance engineering, and backend infrastructure.">
-<title>Rahul Manish Jauhari | AI Inference Systems</title>
+<meta name="description" content="Rahul Manish Jauhari is an MSCS student at Northeastern and former AMD software engineer focused on practical AI systems, AI knowledge search, performance engineering, and backend infrastructure.">
+<title>Rahul Manish Jauhari | Practical AI Systems</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
 <nav class="site-nav" aria-label="Primary">
   <a href="#about">about</a>
   <a href="#work">work</a>
-  <a href="#depth">depth</a>
+  <a href="#approach">approach</a>
   <a href="#contact">contact</a>
 </nav>
 
@@ -22,11 +22,11 @@
   <section class="hero" id="about">
     <div class="hero-copy">
       <p class="kicker">MSCS @ Northeastern | Ex-AMD Software Engineer</p>
-      <h1>AI inference systems where models meet CPUs.</h1>
+      <h1>I build practical AI systems that save engineering time.</h1>
       <p class="lede">
-        I am Rahul Manish Jauhari, a Computer Science graduate student at Northeastern University. I build and benchmark performance-sensitive AI systems across TensorFlow, PyTorch/vLLM, ONNX Runtime, Java integrations, and AMD EPYC CPUs.
+        I am Rahul Manish Jauhari, a Computer Science graduate student at Northeastern University. Before my MS, I spent two years at AMD turning messy engineering problems into usable tools, faster AI workflows, and measurable performance improvements.
       </p>
-      <div class="availability">Seeking co-op and internship roles in AI/ML systems, backend infrastructure, and performance engineering.</div>
+      <div class="availability">Seeking co-op and internship roles in AI systems, backend infrastructure, AI knowledge search, and performance engineering.</div>
       <div class="actions" aria-label="Primary links">
         <a class="button primary" href="#work">Selected work</a>
         <a class="button" href="mailto:jauhari.ra@northeastern.edu">Email me</a>
@@ -38,7 +38,7 @@
       <img src="photo.png" alt="Rahul Jauhari">
       <div>
         <strong>Current focus</strong>
-        <span>LLM serving, CPU inference, benchmark automation, and production-quality performance analysis.</span>
+        <span>AI knowledge search, AI infrastructure, backend systems, and tools that make technical teams faster.</span>
       </div>
     </aside>
   </section>
@@ -46,110 +46,124 @@
   <section class="metrics" aria-label="Career highlights">
     <div>
       <strong>2 years</strong>
-      <span>Software engineer on AMD ZenDNN</span>
+      <span>building production engineering tools at AMD</span>
     </div>
     <div>
-      <strong>30%</strong>
-      <span>memory reduction through weight prepacking layout work</span>
+      <strong>AI search</strong>
+      <span>RAG chatbot for engineering teams</span>
     </div>
     <div>
       <strong>20-30%</strong>
-      <span>efficiency gains from TensorFlow operator fusion work</span>
+      <span>measured efficiency gains in AI workloads</span>
     </div>
     <div>
       <strong>130+</strong>
-      <span>PRs reviewed across ZenAI repositories</span>
+      <span>code reviews across engineering repositories</span>
     </div>
   </section>
 
   <section class="section-heading" id="work">
     <p class="kicker">Selected work</p>
-    <h2>Proof that fits the roles I am targeting.</h2>
-    <p>Each card is intentionally short. Hiring managers can scan the shape of the work first, then open the technical details below if they want depth.</p>
+    <h2>Four projects, each readable in 10 seconds.</h2>
+    <p>Each card follows STAR: situation, task, action, and result. The goal is quick understanding first, technical depth second.</p>
   </section>
 
-  <section class="work-grid" aria-label="Selected AMD work">
+  <section class="work-grid" aria-label="Selected AMD work in STAR format">
+    <article class="work-card featured alt">
+      <div class="card-topline">
+        <span>AI knowledge search</span>
+        <span>RAG chatbot</span>
+      </div>
+      <h3>Engineering knowledge chatbot</h3>
+      <dl class="star-list">
+        <div><dt>Situation</dt><dd>Engineers had to search old tickets, comments, and docs to understand past work.</dd></div>
+        <div><dt>Task</dt><dd>Make team knowledge searchable through a chatbot without losing source context.</dd></div>
+        <div><dt>Action</dt><dd>Built a Retrieval-Augmented Generation (RAG) app that connected past engineering records and docs to an AI assistant with source context.</dd></div>
+        <div><dt>Result</dt><dd>Reduced manual lookup effort and helped prevent duplicate bug reports.</dd></div>
+      </dl>
+    </article>
+
     <article class="work-card featured">
       <div class="card-topline">
-        <span>TensorFlow / Java</span>
-        <span>Shipping product</span>
+        <span>Product engineering</span>
+        <span>Developer adoption</span>
       </div>
-      <h3>Built the TF-Java interface for ZenDNN</h3>
-      <p>Owned the Java interface for ZenDNN's TensorFlow plugin from nothing to a shipping product, including benchmark infra, accuracy validation, examples, docs, and a public blog post.</p>
-      <ul>
-        <li>Built validation for BERT, RecSys, and CNN workloads.</li>
-        <li>Upstreamed PluggableDevice support into TensorFlow-Java.</li>
-        <li>Migrated TF-Java 0.4.0 to 1.1.0 and TensorFlow 2.18 to 2.21.</li>
-      </ul>
+      <h3>Java interface for AMD AI acceleration</h3>
+      <dl class="star-list">
+        <div><dt>Situation</dt><dd>Java users needed a cleaner way to use AMD's AI acceleration work.</dd></div>
+        <div><dt>Task</dt><dd>Turn a low-level performance library into something easier for Java teams to test and adopt.</dd></div>
+        <div><dt>Action</dt><dd>Built the Java interface, examples, validation tests, user guide, and public writeup.</dd></div>
+        <div><dt>Result</dt><dd>Moved the work from internal engineering effort to a shipping, user-facing path.</dd></div>
+      </dl>
       <a href="https://bit.ly/465JyGQ" target="_blank" rel="noopener">Read public writeup</a>
     </article>
 
     <article class="work-card">
       <div class="card-topline">
-        <span>LLM serving</span>
-        <span>vLLM on EPYC</span>
+        <span>AI model testing</span>
+        <span>Benchmarking</span>
       </div>
-      <h3>Made CPU LLM benchmarking reproducible</h3>
-      <p>Designed a multi-instance vLLM benchmarking stack for AMD EPYC CPUs with nginx load balancing, a shared Hugging Face cache, offline-by-default instances, and rootless-safe execution.</p>
-      <ul>
-        <li>Extended sweep harnesses for dtype, backends, and environment injection.</li>
-        <li>Root-caused multi-instance memory blow-ups tied to NUMA and thread binding.</li>
-        <li>Supported Red Hat/RHAII performance methodology and release-candidate testing.</li>
-      </ul>
-      <a href="https://bit.ly/4wMlBy8" target="_blank" rel="noopener">View benchmark skill</a>
+      <h3>Repeatable LLM performance testing</h3>
+      <dl class="star-list">
+        <div><dt>Situation</dt><dd>Teams needed reliable answers about how well large language models ran on CPUs.</dd></div>
+        <div><dt>Task</dt><dd>Create a repeatable test setup that could compare runs and expose regressions.</dd></div>
+        <div><dt>Action</dt><dd>Built a repeatable testing setup that could run multiple model-serving experiments under the same conditions.</dd></div>
+        <div><dt>Result</dt><dd>Made performance testing easier to reproduce and helped root-cause memory and scaling issues.</dd></div>
+      </dl>
+      <a href="https://bit.ly/4wMlBy8" target="_blank" rel="noopener">View benchmark tooling</a>
     </article>
 
     <article class="work-card">
       <div class="card-topline">
         <span>Performance</span>
-        <span>Kernels and graphs</span>
+        <span>Optimization</span>
       </div>
-      <h3>Moved bottlenecks into optimized execution paths</h3>
-      <p>Worked across framework plugins and core library paths to improve inference efficiency for RecSys, CNN, and LLM workloads on CPU.</p>
-      <ul>
-        <li>Improved RecSys throughput by 20% through TensorFlow operator fusion.</li>
-        <li>Engineered a 30% latency/efficiency gain by fusing MatMul, BiasAdd, and TanH.</li>
-        <li>Designed runtime MatMul dispatch logic for AVX2, AVX-512, and AMX shapes.</li>
-      </ul>
+      <h3>Faster AI models on CPUs</h3>
+      <dl class="star-list">
+        <div><dt>Situation</dt><dd>Some AI models were spending too much time and memory on repeated computation.</dd></div>
+        <div><dt>Task</dt><dd>Find bottlenecks and make the models run more efficiently on CPU hardware.</dd></div>
+        <div><dt>Action</dt><dd>Combined repeated model steps, improved memory layout, and tested changes against real workloads.</dd></div>
+        <div><dt>Result</dt><dd>Delivered measured gains, including 20-30% improvements in key workloads.</dd></div>
+      </dl>
     </article>
   </section>
 
-  <section class="system-sketch" aria-label="AI inference work map">
+  <section class="system-sketch" id="approach" aria-label="Rahul's working style">
     <div>
-      <p class="kicker">How the work connects</p>
-      <h2>From model workload to measured CPU performance.</h2>
-      <p>The through-line in my AMD work was making inference faster, more measurable, and easier to consume from real framework interfaces.</p>
+      <p class="kicker">How I work</p>
+      <h2>I turn unclear technical problems into measurable systems.</h2>
+      <p>Most of my work followed the same pattern: understand the pain, build a focused tool or fix, measure it, then make it easier for the next engineer to use.</p>
     </div>
-    <div class="flow" aria-label="Inference workflow diagram">
-      <span>Models</span>
-      <span>Framework plugins</span>
-      <span>ZenDNN / ZenDNNL</span>
-      <span>EPYC CPUs</span>
-      <span>Benchmarks and dashboards</span>
+    <div class="flow" aria-label="Working style diagram">
+      <span>Find the repeated pain</span>
+      <span>Build the smallest useful system</span>
+      <span>Measure the change</span>
+      <span>Document the path</span>
+      <span>Help the team adopt it</span>
     </div>
   </section>
 
   <section class="section-heading" id="depth">
-    <p class="kicker">Technical depth</p>
-    <h2>Open the parts you care about.</h2>
+    <p class="kicker">More context</p>
+    <h2>For readers who want one layer deeper.</h2>
   </section>
 
-  <section class="details-grid" aria-label="Technical details">
+  <section class="details-grid" aria-label="Plain-English work details">
     <details open>
-      <summary>Framework and release engineering</summary>
-      <p>Handled release train work across ZenDNN's TensorFlow plugin, TF-Java packaging, manylinux wheel builds, version display, structured logging, and build migrations from legacy ZenDNN library paths to ZenDNNL.</p>
+      <summary>RAG and LLM evaluation</summary>
+      <p>Built a retrieval chatbot for engineering knowledge and created an evaluation process to compare model answers against stronger reference answers, with human review to avoid relying only on automated scoring.</p>
     </details>
     <details>
-      <summary>Ops and fusions shipped</summary>
-      <p>Worked on FusedMatMul, BiasAdd + Add fusions across Conv2D and MatMul, ZenSafeEmbeddingLookupSparse, GroupSafeEmbeddingLookupSparse horizontal fusion, ZenDNN-accelerated GatherNd/GatherV2, and Conv3D via im2col + MatMul.</p>
+      <summary>Developer-facing product work</summary>
+      <p>Created examples, guides, validation tests, and interfaces so other engineers could use performance work without needing to understand every low-level implementation detail.</p>
     </details>
     <details>
-      <summary>Benchmark automation and dashboards</summary>
-      <p>Built model runners across Python, C++, and Java interfaces; maintained zentorch-vs-IPEX dashboards; supported ONNX Runtime benchmarking across Linux and Windows; and helped the team turn noisy performance runs into actionable regression signals.</p>
+      <summary>Performance and reliability work</summary>
+      <p>Improved AI workload speed and memory use by finding repeated operations, combining steps, improving data layout, and validating the changes with real benchmarks.</p>
     </details>
     <details>
-      <summary>Customer-facing performance work</summary>
-      <p>Supported Red Hat/RHAII, Snapchat, Netflix, BharatGen, and Byblos Bank engagements with benchmarking, CPU sizing, model enablement, regression isolation, and sensitive customer use-case handling.</p>
+      <summary>Team-scale engineering</summary>
+      <p>Reviewed 130+ pull requests, built dashboards and automation, and supported partner-facing performance investigations with careful measurement and documentation.</p>
     </details>
   </section>
 
@@ -161,15 +175,15 @@
     <div class="timeline">
       <article>
         <h3>Co-op Intern, AMD</h3>
-        <p>Improved CNN model performance by up to 25% through quantized kernel development and automated nightly AI framework benchmarking with Jenkins.</p>
+        <p>Improved AI model performance by up to 25% and helped automate nightly performance testing.</p>
       </article>
       <article>
         <h3>Backend Developer Intern, Sypto</h3>
-        <p>Reduced cryptocurrency selection time by 4x and improved dashboard response time by 50% through parallel computation, caching, and query optimization.</p>
+        <p>Reduced cryptocurrency selection time by 4x and improved dashboard response time by 50%.</p>
       </article>
       <article>
         <h3>RPA Intern, Silver Touch</h3>
-        <p>Automated invoice processing with OCR and machine learning, reaching a 95% automation rate for structured data extraction.</p>
+        <p>Automated invoice processing with OCR and machine learning, reaching a 95% automation rate.</p>
       </article>
     </div>
   </section>
@@ -177,7 +191,7 @@
   <section class="contact" id="contact">
     <p class="kicker">Contact</p>
     <h2>Open to co-op conversations.</h2>
-    <p>I am especially interested in teams working on AI infrastructure, inference optimization, backend platforms, performance tooling, or systems for applied ML.</p>
+    <p>I am especially interested in teams building AI knowledge products, AI infrastructure, backend platforms, performance tooling, or systems for applied ML.</p>
     <div class="actions">
       <a class="button primary" href="mailto:jauhari.ra@northeastern.edu">jauhari.ra@northeastern.edu</a>
       <a class="button" href="https://www.linkedin.com/in/rahuljauhari/" target="_blank" rel="noopener">LinkedIn</a>
