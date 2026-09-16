@@ -110,6 +110,21 @@
   <section class="work-grid" aria-label="Selected AMD work in STAR format">
     <article class="work-card featured alt">
       <div class="card-topline">
+        <span>AI infrastructure</span>
+        <span>Public tooling</span>
+      </div>
+      <h3>vLLM multi-instance benchmark infrastructure</h3>
+      <dl class="star-list">
+        <div><dt>Situation</dt><dd>A single LLM server could not show how many user requests the CPU system could handle under parallel serving.</dd></div>
+        <div><dt>Task</dt><dd>Create a repeatable multi-instance setup to serve more requests, compare configurations, and expose regressions.</dd></div>
+        <div><dt>Action</dt><dd>Built containerized vLLM instances with Podman, pinned each instance to a CPU core range, and routed user requests through a load balancer.</dd></div>
+        <div><dt>Result</dt><dd>Showed how request capacity changed across isolated instances and helped root-cause memory, scaling, and CPU-binding issues.</dd></div>
+      </dl>
+      <a href="#flagship">See how it works</a>
+    </article>
+
+    <article class="work-card featured alt">
+      <div class="card-topline">
         <span>Real-time dashboard</span>
         <span>High priority</span>
       </div>
