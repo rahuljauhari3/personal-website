@@ -154,15 +154,17 @@
     <article class="work-card">
       <div class="card-topline">
         <span>Performance</span>
-        <span>Proprietary</span>
+        <span>Public commits</span>
       </div>
       <h3>Faster AI models on CPUs</h3>
       <dl class="star-list">
-        <div><dt>Situation</dt><dd>Some AI models were spending too much time and memory on repeated computation.</dd></div>
-        <div><dt>Task</dt><dd>Find bottlenecks and make the models run more efficiently on CPU hardware.</dd></div>
-        <div><dt>Action</dt><dd>Combined repeated model steps, improved memory layout, and tested changes against real workloads.</dd></div>
-        <div><dt>Result</dt><dd>Delivered measured gains, including 20-30% improvements. Implementation code cannot be shared publicly.</dd></div>
+        <div><dt>Situation</dt><dd>A recommendation model was too slow because its AI framework did not natively use the underlying CPU acceleration library.</dd></div>
+        <div><dt>Task</dt><dd>Close the hardware-support gap without an existing plugin path to build on.</dd></div>
+        <div><dt>Action</dt><dd>Integrated AMD's ZenDNN library with TensorFlow and fused repeated model steps so the model could do less work per request.</dd></div>
+        <div><dt>Result</dt><dd>Delivered about 20-30% efficiency improvement at equivalent accuracy, lowering compute cost and improving response time.</dd></div>
       </dl>
+      <a href="https://github.com/amd/ZenDNN-tensorflow-plugin/commit/2c1650050182f00a0d45e8ec404236c8e188586e" target="_blank" rel="noopener">MatMul fusion commit</a>
+      <a href="https://github.com/amd/ZenDNN-tensorflow-plugin/commit/29389e491c4b8b970abcb4ea4f7fc2820c6c2945" target="_blank" rel="noopener">Embedding lookup fusion commit</a>
     </article>
   </section>
 
