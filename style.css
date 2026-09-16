@@ -60,7 +60,7 @@ body {
 main {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 44px 0 64px;
+  padding: 28px 0 64px;
 }
 
 .hero,
@@ -77,10 +77,10 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 34px;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 28px;
   align-items: stretch;
-  padding: 42px;
+  padding: 32px;
   border-radius: 8px;
 }
 
@@ -104,6 +104,13 @@ main {
   font-weight: 800;
 }
 
+.identity {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 800;
+}
+
 h1,
 h2,
 h3,
@@ -118,9 +125,9 @@ h2 {
 }
 
 h1 {
-  max-width: 760px;
-  margin-bottom: 18px;
-  font-size: clamp(2.6rem, 7vw, 5.7rem);
+  max-width: 720px;
+  margin-bottom: 14px;
+  font-size: clamp(2.15rem, 5.2vw, 4.2rem);
   letter-spacing: 0;
 }
 
@@ -137,15 +144,15 @@ h3 {
 }
 
 .lede {
-  max-width: 720px;
+  max-width: 680px;
   color: #33322e;
-  font-size: 1.08rem;
+  font-size: 1rem;
 }
 
 .availability {
   width: fit-content;
   max-width: 100%;
-  margin: 12px 0 24px;
+  margin: 10px 0 20px;
   padding: 9px 12px;
   color: var(--green);
   background: #e8f0ec;
@@ -219,12 +226,18 @@ h3 {
   font-size: 0.9rem;
 }
 
+@media (max-width: 1040px) and (min-width: 921px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 220px;
+  }
+}
+
 .metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
   overflow: hidden;
-  margin-top: 18px;
+  margin-top: 14px;
   border-radius: 8px;
   background: var(--line);
 }
@@ -453,7 +466,15 @@ details p {
   }
 
   .portrait-card {
-    max-width: 360px;
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    max-width: none;
+  }
+
+  .portrait-card img {
+    height: 100%;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
   }
 
   .metrics,
@@ -474,7 +495,7 @@ details p {
 @media (max-width: 620px) {
   main {
     width: min(100% - 24px, 1120px);
-    padding-top: 24px;
+    padding-top: 18px;
   }
 
   .site-nav {
@@ -486,7 +507,7 @@ details p {
   .system-sketch,
   .experience-strip,
   .contact {
-    padding: 22px;
+    padding: 18px;
   }
 
   .metrics,
@@ -509,6 +530,40 @@ details p {
   }
 
   h1 {
-    font-size: clamp(2.35rem, 14vw, 3.5rem);
+    font-size: clamp(1.9rem, 10vw, 2.65rem);
+    line-height: 1.08;
+  }
+
+  .identity {
+    font-size: 1rem;
+  }
+
+  .lede {
+    font-size: 0.95rem;
+  }
+
+  .availability {
+    width: 100%;
+    font-size: 0.68rem;
+  }
+
+  .actions .button {
+    flex: 1 1 calc(50% - 10px);
+  }
+
+  .actions .button.primary {
+    flex-basis: 100%;
+  }
+
+  .portrait-card {
+    grid-template-columns: 82px minmax(0, 1fr);
+  }
+
+  .portrait-card div {
+    padding: 12px;
+  }
+
+  .portrait-card span {
+    font-size: 0.84rem;
   }
 }
