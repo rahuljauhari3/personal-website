@@ -291,6 +291,12 @@ h3 {
   background: rgba(255, 253, 248, 0.96);
 }
 
+.work-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc((100% - 1px) / 2);
+}
+
 .work-card.featured {
   background: #eef4f1;
 }
@@ -800,6 +806,12 @@ details p {
 
   .work-card {
     padding: 22px;
+  }
+
+  .work-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    justify-self: stretch;
+    width: auto;
   }
 
   .star-list div {
