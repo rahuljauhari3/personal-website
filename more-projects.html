@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Additional AMD projects by Rahul Manish Jauhari.">
+<title>More AMD Projects | Rahul Manish Jauhari</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="site-nav" aria-label="Primary">
+  <a href="index.html#about">01 About</a>
+  <a href="index.html#flagship">02 Flagship</a>
+  <a href="index.html#work">03 Work</a>
+  <a href="index.html#contact">04 Contact</a>
+</nav>
+
+<main>
+  <section class="section-heading more-heading">
+    <p class="kicker">More projects</p>
+    <h1>Additional AMD work.</h1>
+    <p>Projects kept off the homepage so the main page stays fast to scan, while still giving technical reviewers a deeper path.</p>
+    <div class="actions">
+      <a class="button primary" href="index.html#work">Back to homepage</a>
+    </div>
+  </section>
+
+  <section class="work-grid" aria-label="Additional AMD projects">
+    <article class="work-card featured alt">
+      <div class="card-topline">
+        <span>Real-time dashboard</span>
+        <span>High priority</span>
+      </div>
+      <h3>Performance dashboard for AI workloads</h3>
+      <dl class="star-list">
+        <div><dt>Situation</dt><dd>Teams had to wait for long automated runs to finish before seeing which AI models passed, failed, or regressed.</dd></div>
+        <div><dt>Task</dt><dd>Give engineers and managers real-time visibility into model performance across daily and weekly runs.</dd></div>
+        <div><dt>Action</dt><dd>Built a Flask dashboard with live model-by-model updates, admin controls, filters, platform toggles, and automatic Jira plus email alerts for failures.</dd></div>
+        <div><dt>Result</dt><dd>Eliminated dashboard lag, improved issue visibility, and kept it responsive by sharding data and running multiple server instances.</dd></div>
+      </dl>
+    </article>
+
+    <article class="work-card">
+      <div class="card-topline">
+        <span>Product engineering</span>
+        <span>Public writeup</span>
+      </div>
+      <h3>Java interface for AMD AI acceleration</h3>
+      <dl class="star-list">
+        <div><dt>Situation</dt><dd>Java users needed a cleaner way to use AMD's AI acceleration work.</dd></div>
+        <div><dt>Task</dt><dd>Turn a low-level performance library into something easier for Java teams to test and adopt.</dd></div>
+        <div><dt>Action</dt><dd>Built the Java interface, examples, validation tests, user guide, and public writeup.</dd></div>
+        <div><dt>Result</dt><dd>Moved the work from internal engineering effort to a shipping, user-facing path.</dd></div>
+      </dl>
+      <a href="https://github.com/tensorflow/java/commit/3f94211d016fe8ec3f34a1f20b6824e865b2b8a9" target="_blank" rel="noopener">Read public writeup</a>
+    </article>
+
+    <article class="work-card">
+      <div class="card-topline">
+        <span>Agent workflow</span>
+        <span>Design contribution</span>
+      </div>
+      <h3>Regression triage agent design</h3>
+      <dl class="star-list">
+        <div><dt>Situation</dt><dd>Nightly and weekly performance runs could flag regressions, but developers still had to confirm whether the issue was real and where it came from.</dd></div>
+        <div><dt>Task</dt><dd>Help design a workflow that turned raw regression alerts into useful debugging context before a developer opened the ticket.</dd></div>
+        <div><dt>Action</dt><dd>Contributed to the project design by mapping the triage loop: rerun tests, check reproducibility, analyze likely causes, and post findings back to Jira.</dd></div>
+        <div><dt>Result</dt><dd>Helped shape a concrete agent workflow that could give developers a clearer starting point for confirmed performance regressions.</dd></div>
+      </dl>
+    </article>
+  </section>
+</main>
+</body>
+</html>
